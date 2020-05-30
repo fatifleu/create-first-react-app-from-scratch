@@ -4,17 +4,15 @@ class Counter extends Component {
 
     //object to set all the data of this component
     state = {
-        count: 0,
-        imageUrl: 'https://picsum.photos/200'
+        count: 0
     };
 
     render() {
         return (
-            <React.Fragment>
-                <img src={this.state.imageUrl} alt="" />
-                <span>{this.formatCount()}</span>
+            <div>
+                <span className="badge badge-primary" >{this.formatCount()}</span>
                 <button>Increment</button>
-            </React.Fragment>);
+            </div>);
     }
 
     formatCount() {
