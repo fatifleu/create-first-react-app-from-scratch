@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
 
+    //object to set all the data of this component
     state = {
         count: 0,
         imageUrl: 'https://picsum.photos/200'
