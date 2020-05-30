@@ -4,13 +4,14 @@ class Counter extends Component {
 
     //object to set all the data of this component
     state = {
-        value: this.props.value,
+        value: this.props.counter.value,
         tags: ['tag1', 'tag2', 'tag3']
     };
 
 
 
     render() {
+        const { counter } = this.props
 
         return (
             <div>
@@ -23,7 +24,7 @@ class Counter extends Component {
                 </button>
                 <button
                     className="button btn btn-danger btn-sm m-2"
-                    onClick={() => this.props.onDelete(this.props.id)}
+                    onClick={() => this.props.onDelete(counter.id)}
                 >
                     Delete
                 </button>
