@@ -13,11 +13,15 @@ class Counter extends Component {
         else return this.state.tags.map(tag => <li key={tag} >{tag}</li>)
     }
 
+    funcIncrement() {
+        console.log('lol, incremented')
+    }
 
     render() {
 
         return (
             <div>
+                <button onClick={this.funcIncrement} >increment</button>
                 <ul>
                     {this.renderTags()}
                 </ul>
