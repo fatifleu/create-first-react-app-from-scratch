@@ -5,31 +5,40 @@ class Counter extends Component {
     //object to set all the data of this component
     state = {
         count: 0,
-        tags: []
+        tags: ['tag1', 'tag2', 'tag3']
     };
 
-    renderTags() {
-        if (this.state.tags.length === 0) return 'no tags here !'
-        else return this.state.tags.map(tag => <li key={tag} >{tag}</li>)
-    }
 
-    funcIncrement() {
-        console.log('lol, incremented')
-    }
 
     render() {
 
         return (
             <div>
-                <button onClick={this.funcIncrement} >increment</button>
-                <ul>
-                    {this.renderTags()}
-                </ul>
-                {this.state.tags.length === 0 && "please create a new one !"}
+                <span className={this.getBadgeClasses()} >{this.formatCount()}</span>
+                <button
+                    className="btn btn-secondary btn-sm"
+                    onClick={this.handleIncrement}
+                >
+                    Increment
+                </button>
             </div>);
     }
 
+    getBadgeClasses() {
+        let classes = "badge m-2 badge-";
+        classes += (this.state.count === 0) ? "warning" : "primary";
+        return classes;
+    }
 
+    formatCount() {
+        const { count } = this.state;
+
+        return count === 0 ? <span>Zero</span> : count;
+    }
+
+    handleIncrement = () => {
+        console.log("incremented", this)
+    }
 }
 
 export default Counter;
