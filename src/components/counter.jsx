@@ -4,10 +4,10 @@ class Counter extends Component {
 
     render() {
         return (
-            <div>
+            <React.Fragment>
                 <h1>hello world</h1>
                 <button>Increment</button>
-            </div>);
+            </React.Fragment>);
     }
 }
 
