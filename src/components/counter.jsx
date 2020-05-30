@@ -21,6 +21,7 @@ class Counter extends Component {
                 <ul>
                     {this.renderTags()}
                 </ul>
+                {this.state.tags.length === 0 && "please create a new one !"}
             </div>);
     }
 
